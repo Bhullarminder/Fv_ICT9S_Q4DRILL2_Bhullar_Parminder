@@ -14,13 +14,13 @@
     <summary>Instructions:</summary>
     <p id="Instruct" class="text-center"></p>
         </details>
-            
-            
-            <label for="temp">Temperature (°C):</label>
-            <input class="form-control mb-2 w-50 " type="number" id="temperature"  placeholder="Enter temperature">
 
-            <label for="humid">Humidity:</label>
-            <input class="form-control mb-3 w-50" type="number" id="humidity" placeholder="Enter humidity">
+           <div class="d-flex justify-content-center mb-2">
+        <input class="form-control" style="width: 200px;" type="number" id="temperature" placeholder="Enter temperature">
+            </div>
+               <div class="d-flex justify-content-center mb-3">
+            <input class="form-control" style="width: 200px;" type="number" id="humidity" placeholder="Enter humidity">
+                </div>
 
             <button class="btn-success w-50" onclick="check()">Check</button>
         </div>
@@ -36,19 +36,19 @@
              var Result = "";
                 switch (true){
             case (HeatIndex <= 27): 
-                status = "Comfortable / Cool";
+                Result = "Comfortable / Cool";
                     break;
             case (HeatIndex >= 28 && HeatIndex <= 32):
-                status = "Warm";
+                Result = "Warm";
                     break;
             case (HeatIndex >= 33 && HeatIndex <= 37):
-                status = "Hot";
+                Result = "Hot";
                     break;
             case (HeatIndex >= 38 && HeatIndex <= 41):
-                status = "Very Hot / Caution";
+                Result = "Very Hot / Caution";
                     break;
             case (HeatIndex >= 42):
-                status = "Extreme Heat / Danger";
+                Result = "Extreme Heat / Danger";
                     break;
             }
             alert(Result);
