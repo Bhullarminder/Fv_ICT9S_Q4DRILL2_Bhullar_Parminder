@@ -11,11 +11,11 @@
     <div class="main-container">
         <div class="card mb-4 mt-5 bg-dark text-white w-50 mx-auto">
             <h1>Heat Index Checker</h1>
-            <br>
-            <details>
-            <summary>Instructions:</summary>
-            <p id="Instruct" class="text-center"></p>
+            <details id="instructions">
+    <summary>Instructions:</summary>
+    <p id="Instruct" class="text-center"></p>
         </details>
+            
             
             <label for="temp">Temperature (°C):</label>
             <input class="form-control mb-2" type="number" id="temperature"  placeholder="Enter temperature">
@@ -23,12 +23,12 @@
             <label for="humid">Humidity (%):</label>
             <input class="form-control mb-3" type="number" id="humidity" placeholder="Enter humidity">
 
-            <button class="btn-success w-100" onclick="check()">Check</button>
+            <button class="btn-success w-50" onclick="check()">Check</button>
         </div>
     </div>
 
 <script>
-    document.getElementById('Instruct').innerHTML = "Enter your areas temp to find out your condition. ";
+    document.getElementById('Instruct').innerHTML = "Enter your areas temp to find out your condition.";
     function check(){
      var temperature = Number(document.getElementById("temperature").value);
        var humidity = Number(document.getElementById("humidity").value);
