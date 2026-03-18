@@ -8,54 +8,56 @@
 </head>
 <body>
 
-        <div class="container bg-dark text-light p-4 mt-5 w-50 text-center rounded mx-auto">
-            <h1>Heat Index Checker</h1>
-            <details id="instructions">
-    <summary>Instructions:</summary>
-    <p id="Instruct" class="text-center"></p>
-        </details>
+<div class="container bg-dark text-light p-4 mt-5 w-50 text-center rounded mx-auto">
+    <h1>Heat Index Checker</h1>
+    <details id="instructions">
+        <summary>Instructions:</summary>
+        <p id="Instruct" class="text-center">Enter your area's temperature to find out your condition.</p>
+    </details>
 
-           <div class="d-flex justify-content-center mb-2">
+    <div class="d-flex justify-content-center mb-2">
         <input class="form-control" style="width: 450px;" type="number" id="temperature" placeholder="Enter temperature">
-            </div>
-               <div class="d-flex justify-content-center mb-3">
-            <input class="form-control" style="width: 450px;" type="number" id="humidity" placeholder="Enter humidity">
-                </div>
-
-                <div class="text-center mt-3">
-                    <button class="btn btn-success" onclick="check()">Check</button>
-                </div>
-          </div>
-        </div>
+    </div>
+    <div class="d-flex justify-content-center mb-3">
+        <input class="form-control" style="width: 450px;" type="number" id="humidity" placeholder="Enter humidity">
     </div>
 
+    <div class="text-center mt-3">
+        <button class="btn btn-success" onclick="check()">Check</button>
+    </div>
+</div>
+
 <script>
-    document.getElementById('Instruct').innerHTML = "Enter your areas temp to find out your condition.";
- function check(){
+function check(){
     var temperature = Number(document.getElementById("temperature").value);
-       var humidity = Number(document.getElementById("humidity").value);
-         var HeatIndex;
-            HeatIndex = temperature + (0.33 * humidity) - 4; 
-             var Result = "";
-                switch (true){
-            case (HeatIndex <= 27): 
-                Result = "Comfortable / Cool";
-                    break;
-            case (HeatIndex >= 28 && HeatIndex <= 32):
-                Result = "Warm";
-                    break;
-            case (HeatIndex >= 33 && HeatIndex <= 37):
-                Result = "Hot";
-                    break;
-            case (HeatIndex >= 38 && HeatIndex <= 41):
-                Result = "Very Hot / Caution";
-                    break;
-            case (HeatIndex >= 42):
-                Result = "Extreme Heat / Danger";
-                    break;
-            }
-            alert(Result);
-        }
-    </script>
+    var humidity = Number(document.getElementById("humidity").value);
+
+    var HeatIndex = temperature + (0.33 * humidity) - 4; 
+    var Result = "";
+
+    switch (true){
+        case (HeatIndex <= 27): 
+            Result = "Comfortable / Cool";
+            break;
+        case (HeatIndex >= 28 && HeatIndex <= 32):
+            Result = "Warm";
+            break;
+        case (HeatIndex >= 33 && HeatIndex <= 37):
+            Result = "Hot";
+            break;
+        case (HeatIndex >= 38 && HeatIndex <= 41):
+            Result = "Very Hot / Caution";
+            break;
+        case (HeatIndex >= 42):
+            Result = "Extreme Heat / Danger";
+            break;
+        default: 
+            Result = "Cannot be determined..."; 
+            break;
+    }
+
+    alert(Result);
+}
+</script>
 </body>
 </html>
